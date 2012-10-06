@@ -1,0 +1,2 @@
+If you are using any php, css, js, etc codes/classes/libs, put them here.
+In short stuff you are NOT responsible for! ;-)
