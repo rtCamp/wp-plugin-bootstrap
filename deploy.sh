@@ -9,7 +9,6 @@ SVNUSER="rtcamp" # your svn username
 
 
 ##### YOU CAN STOP EDITING HERE #####
-
 CURRENTDIR=`pwd`
 
 # git config
@@ -18,9 +17,6 @@ GITPATH="$CURRENTDIR/" # this file should be in the base of your git repository
 # svn config
 SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
 SVNURL="https://plugins.svn.wordpress.org/$PLUGINSLUG/" # Remote SVN repo on wordpress.org, with no trailing slash
-
-#echo -n "Enter the svn (wordpress.org) username: "
-#read SVNUSER
 
 # Let's begin...
 echo ".........................................."
@@ -41,6 +37,8 @@ if [ "$NEWVERSION1" != "$NEWVERSION2" ]; then echo "Versions don't match. Exitin
 echo "Versions match in readme.txt and PHP file. Let's proceed..."
 
 cd $GITPATH
+bash readme.sh
+git add README.md
 echo -e "Enter a commit message for this new version: \c"
 read COMMITMSG
 git commit -am "$COMMITMSG"
@@ -61,6 +59,7 @@ git checkout-index -a -f --prefix=$SVNPATH/trunk/
 
 echo "Ignoring github specific files and deployment script"
 svn propset svn:ignore "deploy.sh
+readme.sh
 README.md
 .git
 .gitattributes
