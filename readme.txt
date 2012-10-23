@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: rtCamp, rahul286 (this should be a list of wordpress.org userid's)
+Contributors: rtCamp, rahul286
 Donate link: http://rtcamp.com/donate/
 Tags: comments, spam
 Requires at least: 3.0.1

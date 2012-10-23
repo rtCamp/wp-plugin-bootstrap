@@ -1,8 +1,6 @@
 # Plugin Name #
 
-* **Contributors:** [rtCamp] (http://profiles.wordpress.org/rtCamp), [rahul286] (http://profiles.wordpress.org/rahul286), [(this] (http://profiles.wordpress.org/(this), [should] (http://profiles.wordpress.org/should), [be] (http://profiles.wordpress.org/be), [a] (http://profiles.wordpress.org/a), [list] (http://profiles.wordpress.org/list), [of] (http://profiles.wordpress.org/of), [wordpress.org] (http://profiles.wordpress.org/wordpress.org), [userid's)] (http://profiles.wordpress.org/userid's)), [admin] (http://profiles.wordpress.org/admin), [css] (http://profiles.wordpress.org/css), [deploy.sh] (http://profiles.wordpress.org/deploy.sh), [img] (http://profiles.wordpress.org/img), [js] (http://profiles.wordpress.org/js), [lib] (http://profiles.wordpress.org/lib), [main.php] (http://profiles.wordpress.org/main.php), [readme.sh] (http://profiles.wordpress.org/readme.sh), [readme.txt] (http://profiles.wordpress.org/readme.txt), ["
-Contributors"] (http://profiles.wordpress.org/"
-Contributors"), [is] (http://profiles.wordpress.org/is), [a] (http://profiles.wordpress.org/a), [comma] (http://profiles.wordpress.org/comma), [separated] (http://profiles.wordpress.org/separated), [list] (http://profiles.wordpress.org/list), [of] (http://profiles.wordpress.org/of), [wp.org/wp-plugins.org] (http://profiles.wordpress.org/wp.org/wp-plugins.org), [usernames] (http://profiles.wordpress.org/usernames),
+* **Contributors:** [rtCamp] (http://profiles.wordpress.org/rtCamp), [rahul286] (http://profiles.wordpress.org/rahul286),
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
