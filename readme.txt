@@ -1,6 +1,6 @@
 === Plugin Name ===
-Contributors: markjaquith, mdawaffe (this should be a list of wordpress.org userid's)
-Donate link: http://example.com/
+Contributors: rtCamp, rahul286 (this should be a list of wordpress.org userid's)
+Donate link: http://rtcamp.com/donate/
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 3.4
