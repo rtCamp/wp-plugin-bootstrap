@@ -5,7 +5,7 @@
 # main config
 PLUGINSLUG="nginx-helper"  #must match with wordpress.org plugin slug
 MAINFILE="nginx-helper.php" # this should be the name of your main php file in the wordpress plugin
-SVNUSER="rtcamp" # your svn username
+#SVNUSER="rtcamp" # your svn username
 
 
 ##### YOU CAN STOP EDITING HERE #####
@@ -17,6 +17,14 @@ GITPATH="$CURRENTDIR/" # this file should be in the base of your git repository
 # svn config
 SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
 SVNURL="https://plugins.svn.wordpress.org/$PLUGINSLUG/" # Remote SVN repo on wordpress.org, with no trailing slash
+
+# Detect svn username
+SVNUSER=$(cat ~/.subversion/auth/svn.simple/* | grep -A4 wordpress.org | tail -n1)
+if [ -z "$SVNUSER" ]
+then
+	SVNUSER="rtcamp"
+fi
+
 
 # Let's begin...
 echo ".........................................."
