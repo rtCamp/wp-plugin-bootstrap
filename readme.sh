@@ -7,9 +7,20 @@ TITLE=$(head -n1 readme.txt)
 LICENSE=$(cat readme.txt | grep "License URI:" | gawk -F// '{ print $2 }' |  cat readme.txt | grep "License URI:" | cut -d: -f2,3)
 #echo $TITLE $LICENSE
 
+# Add Images
+#echo Dollar 1 = $1
+curl -I $1/assets/banner-772x250.png | grep 200 &> /dev/null
+if [ $? -eq 0 ]
+then
+	echo "![alt text]($1assets/banner-772x250.png)" &> /tmp/file
+	echo &>> /tmp/file
+else
+	echo "![alt text]($1assets/banner-772x250.jpg)" &> /tmp/file
+	echo &>> /tmp/file
+fi
 
 # Add Title & Contribute To Temp File
-head -n1 readme.txt &> /tmp/file
+head -n1 readme.txt &>> /tmp/file
 echo -n Contributors: &>> /tmp/file
 
 # Find No Of Contributors & Send Them To Temp File
