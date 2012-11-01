@@ -7,15 +7,28 @@ TITLE=$(head -n1 readme.txt)
 LICENSE=$(cat readme.txt | grep "License URI:" | gawk -F// '{ print $2 }' |  cat readme.txt | grep "License URI:" | cut -d: -f2,3)
 #echo $TITLE $LICENSE
 
+# Remove Previous Files
+rm /tmp/file*
+
+
+
 # Add Images
-#echo Dollar 1 = $1
 curl -I $1/assets/banner-772x250.png | grep 200 &> /dev/null
 if [ $? -eq 0 ]
 then
-	echo "![alt text]($1assets/banner-772x250.png)" &> /tmp/file
+	echo "![alt text]($1/assets/banner-772x250.png)" &> /tmp/file
 	echo &>> /tmp/file
-else
-	echo "![alt text]($1assets/banner-772x250.jpg)" &> /tmp/file
+fi
+curl -I $1/assets/banner-772x250.jpg | grep 200 &> /dev/null
+if [ $? -eq 0 ]
+then
+	echo "![alt text]($1/assets/banner-772x250.jpg)" &> /tmp/file
+	echo &>> /tmp/file
+fi
+curl -I $1/assets/banner-772x250.jpeg | grep 200 &> /dev/null
+if [ $? -eq 0 ]
+then
+	echo "![alt text]($1/assets/banner-772x250.jpeg)" &> /tmp/file
 	echo &>> /tmp/file
 fi
 
@@ -76,4 +89,5 @@ sed '/Description/,$s/=/####/g' /tmp/file1 &> /tmp/file2
 sed 's/Contributors:/* **Contributors:**/I' /tmp/file2 &> /tmp/file1
 sed 's/Donate link:/* **Donate Link:**/I' /tmp/file1 &> /tmp/file2
 sed 's/License:/* **License:**/I' /tmp/file2 &> README.md
+
 
