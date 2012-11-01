@@ -90,4 +90,3 @@ sed 's/Contributors:/* **Contributors:**/I' /tmp/file2 &> /tmp/file1
 sed 's/Donate link:/* **Donate Link:**/I' /tmp/file1 &> /tmp/file2
 sed 's/License:/* **License:**/I' /tmp/file2 &> README.md
 
-
