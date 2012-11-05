@@ -8,7 +8,10 @@ LICENSE=$(cat readme.txt | grep "License URI:" | awk -F// '{ print $2 }' |  cat 
 #echo $TITLE $LICENSE
 
 # Remove Previous Files
-rm /tmp/file* &> /dev/null
+if [ -e /tmp/file ] || [ -e /tmp/file1 ] || [ -e /tmp/file2 ]
+then
+        rm /tmp/file* &> /dev/null
+fi
 
 
 
