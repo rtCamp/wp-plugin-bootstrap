@@ -69,6 +69,7 @@ map.conf
 nginx.log
 tests
 bin
+assets
 phpunit.xml" "$SVNPATH/trunk/"
 
 echo "Changing directory to SVN and committing to trunk"
