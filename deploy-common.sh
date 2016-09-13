@@ -70,6 +70,14 @@ nginx.log
 tests
 bin
 assets
+CONTRIBUTING.md
+Gruntfile.js
+bootstrap_tests.php
+config.rb
+log
+package.json
+phpunit.xml
+phpunit.xml.dist
 phpunit.xml" "$SVNPATH/trunk/"
 
 echo "Changing directory to SVN and committing to trunk"
