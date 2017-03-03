@@ -87,7 +87,15 @@ sed 's/===/#/g' /tmp/file1 &> /tmp/file2
 sed 's/==/##/g' /tmp/file2 &> /tmp/file1
 
 # Replave = to #### From Description To The End Of File
-sed '/Description/,$s/=/####/g' /tmp/file1 &> /tmp/file2
+# Commenting below like which is replacing all = signs to # which
+# ends up replacing the = signs from the link URLS
+# Related issue : https://github.com/rtMediaWP/rtMedia/issues/824
+# sed '/Description/,$s/=/####/g' /tmp/file1 &> /tmp/file2
+
+# Replace = to #### From Description To The End Of File
+# It replaces lines starting only with = sign
+# It solves : https://github.com/rtMediaWP/rtMedia/issues/824
+sed '/^=/ s/=/####/g' /tmp/file1 &> /tmp/file2
 
 # Make Text Bold
 sed 's/[Cc]ontributors:/* **Contributors:**/' /tmp/file2 &> /tmp/file1
