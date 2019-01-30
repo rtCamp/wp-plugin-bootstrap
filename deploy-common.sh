@@ -76,6 +76,7 @@ bootstrap_tests.php
 config.rb
 log
 package.json
+package-lock.json
 phpunit.xml
 phpunit.xml.dist
 phpunit.xml" "$SVNPATH/trunk/"
