@@ -4,8 +4,18 @@ CURRENTDIR=`pwd`
 # git config
 GITPATH="$CURRENTDIR/" # this file should be in the base of your git repository
 
+# create directory if custom path is provided for svn cloning.
+if [ ! -z "$SVNCLONEPATH" ]; then
+  mkdir -p "$SVNCLONEPATH"
+fi
+
 # svn config
-SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
+if [ -d "$SVNCLONEPATH" ]; then
+  SVNPATH=$SVNCLONEPATH/$PLUGINSLUG; # path to a custom temp SVN repo. No trailing slash required and don't add trunk.
+else
+  SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
+fi
+
 SVNURL="https://plugins.svn.wordpress.org/$PLUGINSLUG/" # Remote SVN repo on wordpress.org, with no trailing slash
 
 # Detect svn username based on url
@@ -93,7 +103,10 @@ svn copy trunk/ tags/$NEWVERSION1/
 cd $SVNPATH/tags/$NEWVERSION1
 svn commit --username=$SVNUSER -m "Tagging version $NEWVERSION1"
 
-echo "Removing temporary directory $SVNPATH"
-rm -fr $SVNPATH/
+# Remove tmp directory after commit.
+if [ -z "$SVNCLONEPATH" ]; then
+  echo "Removing temporary directory $SVNPATH"
+  rm -fr $SVNPATH/
+fi
 
 echo "*** FIN ***"
